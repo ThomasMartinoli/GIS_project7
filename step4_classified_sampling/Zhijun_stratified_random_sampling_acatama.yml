@@ -1,0 +1,837 @@
+thematic_raster:
+  band: 1
+  nodata: -1
+  path: D:\Lab\output\validation\ghs_rec_int.tif
+sampling_layer: D:\Lab\output\validation\stratified_random_sampling.gpkg
+dialog_size: !!python/tuple
+- 1920
+- 1017
+grid_view_widgets:
+  columns: 2
+  rows: 1
+current_sample_idx: 84
+fit_to_sample: 0.004
+is_completed: true
+view_widgets_config:
+  0:
+    layer_name: ESRI Satellite
+    render_file_path: null
+    scale_factor: 1.0
+    view_name: ''
+  1:
+    layer_name: Google Satellite
+    render_file_path: null
+    scale_factor: 1.0
+    view_name: ''
+classification_buttons:
+  1:
+    color: '#13dede'
+    name: Not Urban
+    thematic_class: '1'
+  2:
+    color: '#dc0f0f'
+    name: Urban
+    thematic_class: '2'
+points:
+  0:
+    classif_id: 2
+    shape_id: 185
+  1:
+    classif_id: 1
+    shape_id: 93
+  2:
+    classif_id: 1
+    shape_id: 157
+  3:
+    classif_id: 1
+    shape_id: 188
+  4:
+    classif_id: 1
+    shape_id: 114
+  5:
+    classif_id: 1
+    shape_id: 82
+  6:
+    classif_id: 1
+    shape_id: 100
+  7:
+    classif_id: 1
+    shape_id: 16
+  8:
+    classif_id: 1
+    shape_id: 148
+  9:
+    classif_id: 1
+    shape_id: 12
+  10:
+    classif_id: 1
+    shape_id: 34
+  11:
+    classif_id: 1
+    shape_id: 147
+  12:
+    classif_id: 1
+    shape_id: 109
+  13:
+    classif_id: 1
+    shape_id: 112
+  14:
+    classif_id: 1
+    shape_id: 68
+  15:
+    classif_id: 2
+    shape_id: 14
+  16:
+    classif_id: 2
+    shape_id: 184
+  17:
+    classif_id: 1
+    shape_id: 26
+  18:
+    classif_id: 1
+    shape_id: 171
+  19:
+    classif_id: 1
+    shape_id: 11
+  20:
+    classif_id: 1
+    shape_id: 163
+  21:
+    classif_id: 1
+    shape_id: 169
+  22:
+    classif_id: 1
+    shape_id: 132
+  23:
+    classif_id: 1
+    shape_id: 170
+  24:
+    classif_id: 1
+    shape_id: 70
+  25:
+    classif_id: 1
+    shape_id: 194
+  26:
+    classif_id: 1
+    shape_id: 73
+  27:
+    classif_id: 1
+    shape_id: 110
+  28:
+    classif_id: 2
+    shape_id: 183
+  29:
+    classif_id: 1
+    shape_id: 190
+  30:
+    classif_id: 1
+    shape_id: 140
+  31:
+    classif_id: 1
+    shape_id: 84
+  32:
+    classif_id: 1
+    shape_id: 181
+  33:
+    classif_id: 1
+    shape_id: 33
+  34:
+    classif_id: 1
+    shape_id: 104
+  35:
+    classif_id: 1
+    shape_id: 80
+  36:
+    classif_id: 1
+    shape_id: 179
+  37:
+    classif_id: 2
+    shape_id: 20
+  38:
+    classif_id: 1
+    shape_id: 177
+  39:
+    classif_id: 1
+    shape_id: 49
+  40:
+    classif_id: 1
+    shape_id: 97
+  41:
+    classif_id: 1
+    shape_id: 133
+  42:
+    classif_id: 1
+    shape_id: 31
+  43:
+    classif_id: 1
+    shape_id: 6
+  44:
+    classif_id: 1
+    shape_id: 2
+  45:
+    classif_id: 1
+    shape_id: 58
+  46:
+    classif_id: 1
+    shape_id: 54
+  47:
+    classif_id: 1
+    shape_id: 24
+  48:
+    classif_id: 1
+    shape_id: 134
+  49:
+    classif_id: 2
+    shape_id: 86
+  50:
+    classif_id: 1
+    shape_id: 8
+  51:
+    classif_id: 1
+    shape_id: 75
+  52:
+    classif_id: 2
+    shape_id: 39
+  53:
+    classif_id: 1
+    shape_id: 154
+  54:
+    classif_id: 1
+    shape_id: 94
+  55:
+    classif_id: 2
+    shape_id: 38
+  56:
+    classif_id: 1
+    shape_id: 27
+  57:
+    classif_id: 1
+    shape_id: 66
+  58:
+    classif_id: 2
+    shape_id: 141
+  59:
+    classif_id: 1
+    shape_id: 35
+  60:
+    classif_id: 1
+    shape_id: 123
+  61:
+    classif_id: 1
+    shape_id: 187
+  62:
+    classif_id: 1
+    shape_id: 146
+  63:
+    classif_id: 1
+    shape_id: 89
+  64:
+    classif_id: 1
+    shape_id: 144
+  65:
+    classif_id: 1
+    shape_id: 7
+  66:
+    classif_id: 1
+    shape_id: 67
+  67:
+    classif_id: 1
+    shape_id: 120
+  68:
+    classif_id: 1
+    shape_id: 30
+  69:
+    classif_id: 1
+    shape_id: 29
+  70:
+    classif_id: 1
+    shape_id: 174
+  71:
+    classif_id: 1
+    shape_id: 32
+  72:
+    classif_id: 1
+    shape_id: 69
+  73:
+    classif_id: 1
+    shape_id: 195
+  74:
+    classif_id: 1
+    shape_id: 87
+  75:
+    classif_id: 1
+    shape_id: 19
+  76:
+    classif_id: 1
+    shape_id: 74
+  77:
+    classif_id: 1
+    shape_id: 59
+  78:
+    classif_id: 1
+    shape_id: 57
+  79:
+    classif_id: 1
+    shape_id: 47
+  80:
+    classif_id: 1
+    shape_id: 15
+  81:
+    classif_id: 1
+    shape_id: 41
+  82:
+    classif_id: 1
+    shape_id: 124
+  83:
+    classif_id: 1
+    shape_id: 178
+  84:
+    classif_id: 1
+    shape_id: 200
+  85:
+    classif_id: 1
+    shape_id: 142
+  86:
+    classif_id: 1
+    shape_id: 91
+  87:
+    classif_id: 1
+    shape_id: 127
+  88:
+    classif_id: 1
+    shape_id: 186
+  89:
+    classif_id: 1
+    shape_id: 76
+  90:
+    classif_id: 2
+    shape_id: 121
+  91:
+    classif_id: 1
+    shape_id: 116
+  92:
+    classif_id: 1
+    shape_id: 85
+  93:
+    classif_id: 1
+    shape_id: 166
+  94:
+    classif_id: 1
+    shape_id: 167
+  95:
+    classif_id: 1
+    shape_id: 151
+  96:
+    classif_id: 1
+    shape_id: 1
+  97:
+    classif_id: 1
+    shape_id: 153
+  98:
+    classif_id: 1
+    shape_id: 10
+  99:
+    classif_id: 2
+    shape_id: 117
+  100:
+    classif_id: 1
+    shape_id: 99
+  101:
+    classif_id: 1
+    shape_id: 40
+  102:
+    classif_id: 1
+    shape_id: 199
+  103:
+    classif_id: 1
+    shape_id: 152
+  104:
+    classif_id: 2
+    shape_id: 78
+  105:
+    classif_id: 1
+    shape_id: 72
+  106:
+    classif_id: 1
+    shape_id: 160
+  107:
+    classif_id: 1
+    shape_id: 79
+  108:
+    classif_id: 1
+    shape_id: 180
+  109:
+    classif_id: 1
+    shape_id: 113
+  110:
+    classif_id: 1
+    shape_id: 102
+  111:
+    classif_id: 1
+    shape_id: 28
+  112:
+    classif_id: 1
+    shape_id: 182
+  113:
+    classif_id: 1
+    shape_id: 60
+  114:
+    classif_id: 2
+    shape_id: 77
+  115:
+    classif_id: 1
+    shape_id: 101
+  116:
+    classif_id: 2
+    shape_id: 64
+  117:
+    classif_id: 1
+    shape_id: 88
+  118:
+    classif_id: 1
+    shape_id: 172
+  119:
+    classif_id: 1
+    shape_id: 108
+  120:
+    classif_id: 1
+    shape_id: 149
+  121:
+    classif_id: 1
+    shape_id: 51
+  122:
+    classif_id: 1
+    shape_id: 155
+  123:
+    classif_id: 1
+    shape_id: 165
+  124:
+    classif_id: 1
+    shape_id: 22
+  125:
+    classif_id: 1
+    shape_id: 130
+  126:
+    classif_id: 1
+    shape_id: 36
+  127:
+    classif_id: 1
+    shape_id: 50
+  128:
+    classif_id: 1
+    shape_id: 5
+  129:
+    classif_id: 1
+    shape_id: 65
+  130:
+    classif_id: 1
+    shape_id: 145
+  131:
+    classif_id: 1
+    shape_id: 17
+  132:
+    classif_id: 1
+    shape_id: 176
+  133:
+    classif_id: 1
+    shape_id: 115
+  134:
+    classif_id: 2
+    shape_id: 83
+  135:
+    classif_id: 1
+    shape_id: 136
+  136:
+    classif_id: 1
+    shape_id: 55
+  137:
+    classif_id: 1
+    shape_id: 63
+  138:
+    classif_id: 1
+    shape_id: 162
+  139:
+    classif_id: 1
+    shape_id: 46
+  140:
+    classif_id: 1
+    shape_id: 13
+  141:
+    classif_id: 1
+    shape_id: 137
+  142:
+    classif_id: 1
+    shape_id: 198
+  143:
+    classif_id: 1
+    shape_id: 23
+  144:
+    classif_id: 1
+    shape_id: 164
+  145:
+    classif_id: 1
+    shape_id: 129
+  146:
+    classif_id: 1
+    shape_id: 25
+  147:
+    classif_id: 1
+    shape_id: 135
+  148:
+    classif_id: 2
+    shape_id: 62
+  149:
+    classif_id: 1
+    shape_id: 156
+  150:
+    classif_id: 1
+    shape_id: 43
+  151:
+    classif_id: 1
+    shape_id: 105
+  152:
+    classif_id: 2
+    shape_id: 106
+  153:
+    classif_id: 1
+    shape_id: 175
+  154:
+    classif_id: 1
+    shape_id: 189
+  155:
+    classif_id: 1
+    shape_id: 98
+  156:
+    classif_id: 1
+    shape_id: 107
+  157:
+    classif_id: 1
+    shape_id: 168
+  158:
+    classif_id: 1
+    shape_id: 118
+  159:
+    classif_id: 1
+    shape_id: 90
+  160:
+    classif_id: 1
+    shape_id: 81
+  161:
+    classif_id: 1
+    shape_id: 197
+  162:
+    classif_id: 1
+    shape_id: 131
+  163:
+    classif_id: 1
+    shape_id: 158
+  164:
+    classif_id: 1
+    shape_id: 3
+  165:
+    classif_id: 2
+    shape_id: 138
+  166:
+    classif_id: 1
+    shape_id: 111
+  167:
+    classif_id: 1
+    shape_id: 139
+  168:
+    classif_id: 1
+    shape_id: 9
+  169:
+    classif_id: 1
+    shape_id: 122
+  170:
+    classif_id: 1
+    shape_id: 191
+  171:
+    classif_id: 1
+    shape_id: 92
+  172:
+    classif_id: 2
+    shape_id: 150
+  173:
+    classif_id: 1
+    shape_id: 4
+  174:
+    classif_id: 1
+    shape_id: 125
+  175:
+    classif_id: 1
+    shape_id: 196
+  176:
+    classif_id: 1
+    shape_id: 56
+  177:
+    classif_id: 1
+    shape_id: 143
+  178:
+    classif_id: 1
+    shape_id: 45
+  179:
+    classif_id: 1
+    shape_id: 126
+  180:
+    classif_id: 1
+    shape_id: 37
+  181:
+    classif_id: 2
+    shape_id: 96
+  182:
+    classif_id: 1
+    shape_id: 44
+  183:
+    classif_id: 1
+    shape_id: 42
+  184:
+    classif_id: 1
+    shape_id: 128
+  185:
+    classif_id: 1
+    shape_id: 61
+  186:
+    classif_id: 1
+    shape_id: 103
+  187:
+    classif_id: 1
+    shape_id: 48
+  188:
+    classif_id: 1
+    shape_id: 71
+  189:
+    classif_id: 1
+    shape_id: 95
+  190:
+    classif_id: 1
+    shape_id: 173
+  191:
+    classif_id: 1
+    shape_id: 159
+  192:
+    classif_id: 1
+    shape_id: 192
+  193:
+    classif_id: 1
+    shape_id: 53
+  194:
+    classif_id: 1
+    shape_id: 18
+  195:
+    classif_id: 1
+    shape_id: 21
+  196:
+    classif_id: 1
+    shape_id: 193
+  197:
+    classif_id: 1
+    shape_id: 52
+  198:
+    classif_id: 1
+    shape_id: 161
+  199:
+    classif_id: 1
+    shape_id: 119
+points_order:
+- 185
+- 93
+- 157
+- 188
+- 114
+- 82
+- 100
+- 16
+- 148
+- 12
+- 34
+- 147
+- 109
+- 112
+- 68
+- 14
+- 184
+- 26
+- 171
+- 11
+- 163
+- 169
+- 132
+- 170
+- 70
+- 194
+- 73
+- 110
+- 183
+- 190
+- 140
+- 84
+- 181
+- 33
+- 104
+- 80
+- 179
+- 20
+- 177
+- 49
+- 97
+- 133
+- 31
+- 6
+- 2
+- 58
+- 54
+- 24
+- 134
+- 86
+- 8
+- 75
+- 39
+- 154
+- 94
+- 38
+- 27
+- 66
+- 141
+- 35
+- 123
+- 187
+- 146
+- 89
+- 144
+- 7
+- 67
+- 120
+- 30
+- 29
+- 174
+- 32
+- 69
+- 195
+- 87
+- 19
+- 74
+- 59
+- 57
+- 47
+- 15
+- 41
+- 124
+- 178
+- 200
+- 142
+- 91
+- 127
+- 186
+- 76
+- 121
+- 116
+- 85
+- 166
+- 167
+- 151
+- 1
+- 153
+- 10
+- 117
+- 99
+- 40
+- 199
+- 152
+- 78
+- 72
+- 160
+- 79
+- 180
+- 113
+- 102
+- 28
+- 182
+- 60
+- 77
+- 101
+- 64
+- 88
+- 172
+- 108
+- 149
+- 51
+- 155
+- 165
+- 22
+- 130
+- 36
+- 50
+- 5
+- 65
+- 145
+- 17
+- 176
+- 115
+- 83
+- 136
+- 55
+- 63
+- 162
+- 46
+- 13
+- 137
+- 198
+- 23
+- 164
+- 129
+- 25
+- 135
+- 62
+- 156
+- 43
+- 105
+- 106
+- 175
+- 189
+- 98
+- 107
+- 168
+- 118
+- 90
+- 81
+- 197
+- 131
+- 158
+- 3
+- 138
+- 111
+- 139
+- 9
+- 122
+- 191
+- 92
+- 150
+- 4
+- 125
+- 196
+- 56
+- 143
+- 45
+- 126
+- 37
+- 96
+- 44
+- 42
+- 128
+- 61
+- 103
+- 48
+- 71
+- 95
+- 173
+- 159
+- 192
+- 53
+- 18
+- 21
+- 193
+- 52
+- 161
+- 119
+accuracy_assessment_sampling_file: null
