@@ -1,0 +1,43 @@
+FINAL ERROR MATRIX WORLD_POP;;;;;;;
+;;;;;;;
+Thematic_class/Classified;;;1;2;UA;PA;OA
+1;;;374;27;0,93;0,66;0.6383
+2;;;190;9;0,05;0,25;
+;;;;;;;
+;;;564;36;;;
+;;TOT;600;;;;
+;;;;;;;
+;;;;;;;
+;;;;;;;
+;;;;;;;
+;;;;;;;
+;;;;;;;
+;;;;;;;
+;;;;;;;
+;;;;;;;
+FINAL ERROR MATRIX GHS;;;;;;;
+;;;;;;;
+Thematic_class/Classified;;;1;2;UA;PA;OA
+1;;;393;8;0,98;0,7;0,70167
+2;;;171;28;0,14;0,78;
+;;;;;;;
+;;;;;;;
+;;;564;36;;;
+;;TOT;600;;;;
+;;;;;;;
+;;;;;;;
+;;;;;;;
+;;;;;;;
+;;;;;;;
+;;;;;;;
+;;;;;;;
+UA;User's accuracy of a class shows how often a user of thematic;;;;;;
+;raster can expect to find the class on the ground;;;;;;
+;;;;;;;
+;;;;;;;
+PA;Producer's accuracy of a class is probability that the class present ;;;;;;
+;on the ground is also captured by classification in the thematic raster;;;;;;
+;;;;;;;
+;;;;;;;
+OA;Overall accuracy is portion of correctly classified ;;;;;;
+;pixels in total number of pixels;;;;;;
