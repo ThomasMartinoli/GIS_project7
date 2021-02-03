@@ -37,7 +37,17 @@ var WorldPopS1 = new ol.layer.Image({
 	opacity: 0.7,
 });
 
-
+var Intercomp = new ol.layer.Image({
+	title:'Intercomparison',
+	visible: false,
+	source:new ol.source.ImageWMS({
+		url:'http://localhost:8082/geoserver/GIS_project7/wms',
+		params: {'LAYERS':'	GIS_project7:intercomparison_S2'},
+		ratio: 1,
+		serverType: 'geoserver',
+	}),
+	opacity: 0.7,
+});
 
 
 /*Create the map*/
@@ -50,7 +60,7 @@ var map = new  ol.Map({
 	}),
 	new ol.layer.Group({
 		title: 'Overlay Layers',
-		layers: [GHSPOPS1,WorldPopS1]
+		layers: [GHSPOPS1, WorldPopS1,Intercomp]
 	}),
 	],
 	view: new ol.View({
