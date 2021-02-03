@@ -1393,7 +1393,7 @@ ul.contact {
       ul.contact li:first-child:before {
         top: 0; }
     ul.contact li a {
-      color: inherit; }
+      color: #9fa3a6; }
 
 /* Pagination */
 ul.pagination {
@@ -2239,7 +2239,7 @@ button,
         -webkit-transition: color 0.2s ease-in-out, -webkit-transform 0.2s ease-in-out;
         -ms-transition: color 0.2s ease-in-out, -ms-transform 0.2s ease-in-out;
         transition: color 0.2s ease-in-out, transform 0.2s ease-in-out;
-        color: #9fa3a6;
+        color: #3d4449;
         content: '\f078';
         position: absolute;
         right: 0; }
@@ -2258,7 +2258,7 @@ button,
   margin: 0.5em 0 0 0;
   padding: 0.5em 0 0 0; }
   #menu > ul > li > ul {
-    color: #9fa3a6;
+    color: #3d4449;
     display: none;
     margin: 0.5em 0 1.5em 0;
     padding-left: 1em; }
