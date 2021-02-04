@@ -41,7 +41,7 @@ var Intercomp = new ol.layer.Image({
 	visible: true,
 	source:new ol.source.ImageWMS({
 		url:'http://localhost:8082/geoserver/GIS_project7/wms',
-		params: {'LAYERS':'	GIS_project7:intercomparison_S2'},
+		params: {'LAYERS':'GIS_project7:intercomparison_S2'},
 		ratio: 1,
 		serverType: 'geoserver',
 	}),
@@ -53,7 +53,7 @@ var ReclassifiedGHSPop = new ol.layer.Image({
 	visible: false,
 	source:new ol.source.ImageWMS({
 		url:'http://localhost:8082/geoserver/GIS_project7/wms',
-		params: {'LAYERS':'	GIS_project7:Reclassified_GHS-Pop_S3'},
+		params: {'LAYERS':'GIS_project7:Reclassified_GHS-Pop_S3'},
 		ratio: 1,
 		serverType: 'geoserver',
 	}),
@@ -65,7 +65,7 @@ var ReclassifiedWorldPop = new ol.layer.Image({
 	visible: false,
 	source:new ol.source.ImageWMS({
 		url:'http://localhost:8082/geoserver/GIS_project7/wms',
-		params: {'LAYERS':'	GIS_project7:Reclassified_WorldPop_S3'},
+		params: {'LAYERS':'GIS_project7:Reclassified_WorldPop_S3'},
 		ratio: 1,
 		serverType: 'geoserver',
 	}),
@@ -77,7 +77,7 @@ var Difference = new ol.layer.Image({
 	visible: false,
 	source:new ol.source.ImageWMS({
 		url:'http://localhost:8082/geoserver/GIS_project7/wms',
-		params: {'LAYERS':'	GIS_project7:Difference_S3'},
+		params: {'LAYERS':'GIS_project7:Difference_S3'},
 		ratio: 1,
 		serverType: 'geoserver',
 	}),
@@ -90,6 +90,10 @@ var map = new  ol.Map({
 	target: document.getElementById('map'),
 	layers: [	
 	new ol.layer.Group({
+		title: 'Base Maps',
+		layers: [BingBaseMap]
+	}),
+	new ol.layer.Group({
 		title: 'Validation',
 		layers: [ReclassifiedGHSPop, ReclassifiedWorldPop,Difference]
 	}),
@@ -97,12 +101,9 @@ var map = new  ol.Map({
 		title: 'Intercomparison',
 		layers: [GHSPOPS1, WorldPopS1,Intercomp]
 	}),
-	new ol.layer.Group({
-		title: 'Base Maps',
-		layers: [BingBaseMap]
-	}),
+	
     ],
-    
+
 	view: new ol.View({
 		center: [13000000,15000000],
 		zoom: 2.5
