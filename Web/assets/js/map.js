@@ -1,5 +1,4 @@
  /*Basemaps*/
-
 var BingBaseMap = new ol.layer.Tile({
 	title: 'Bing Map',
 	type: 'base',
@@ -14,8 +13,8 @@ var BingBaseMap = new ol.layer.Tile({
 
 /*Layers*/
 var GHSPOPS1= new ol.layer.Image({
-	title:'GHS-POP',
-	visible: true,
+	title:'Processed GHS-POP',
+	visible: false,
 	source:new ol.source.ImageWMS({
 		url:'http://localhost:8082/geoserver/GIS_project7/wms',
 		params: {'LAYERS':'GIS_project7:processed_GHS-POP_S1'},
@@ -26,7 +25,7 @@ var GHSPOPS1= new ol.layer.Image({
 });
 
 var WorldPopS1 = new ol.layer.Image({
-	title:'World-Pop',
+	title:'Processed World-POP',
 	visible: false,
 	source:new ol.source.ImageWMS({
 		url:'http://localhost:8082/geoserver/GIS_project7/wms',
@@ -39,10 +38,46 @@ var WorldPopS1 = new ol.layer.Image({
 
 var Intercomp = new ol.layer.Image({
 	title:'Intercomparison',
-	visible: false,
+	visible: true,
 	source:new ol.source.ImageWMS({
 		url:'http://localhost:8082/geoserver/GIS_project7/wms',
 		params: {'LAYERS':'	GIS_project7:intercomparison_S2'},
+		ratio: 1,
+		serverType: 'geoserver',
+	}),
+	opacity: 0.7,
+});
+
+var ReclassifiedGHSPop = new ol.layer.Image({
+	title:'Reclassified GHS-POP',
+	visible: false,
+	source:new ol.source.ImageWMS({
+		url:'http://localhost:8082/geoserver/GIS_project7/wms',
+		params: {'LAYERS':'	GIS_project7:Reclassified_GHS-Pop_S3'},
+		ratio: 1,
+		serverType: 'geoserver',
+	}),
+	opacity: 0.7,
+});
+
+var ReclassifiedWorldPop = new ol.layer.Image({
+	title:'Reclassified World-POP',
+	visible: false,
+	source:new ol.source.ImageWMS({
+		url:'http://localhost:8082/geoserver/GIS_project7/wms',
+		params: {'LAYERS':'	GIS_project7:Reclassified_WorldPop_S3'},
+		ratio: 1,
+		serverType: 'geoserver',
+	}),
+	opacity: 0.7,
+});
+
+var Difference = new ol.layer.Image({
+	title:'Difference',
+	visible: false,
+	source:new ol.source.ImageWMS({
+		url:'http://localhost:8082/geoserver/GIS_project7/wms',
+		params: {'LAYERS':'	GIS_project7:Difference_S3'},
 		ratio: 1,
 		serverType: 'geoserver',
 	}),
@@ -53,19 +88,24 @@ var Intercomp = new ol.layer.Image({
 /*Create the map*/
 var map = new  ol.Map({
 	target: document.getElementById('map'),
-	layers: [
+	layers: [	
+	new ol.layer.Group({
+		title: 'Validation',
+		layers: [ReclassifiedGHSPop, ReclassifiedWorldPop,Difference]
+	}),
+	new ol.layer.Group({
+		title: 'Intercomparison',
+		layers: [GHSPOPS1, WorldPopS1,Intercomp]
+	}),
 	new ol.layer.Group({
 		title: 'Base Maps',
 		layers: [BingBaseMap]
 	}),
-	new ol.layer.Group({
-		title: 'Overlay Layers',
-		layers: [GHSPOPS1, WorldPopS1,Intercomp]
-	}),
-	],
+    ],
+    
 	view: new ol.View({
-		center: [0,0],
-		zoom: 2
+		center: [13000000,15000000],
+		zoom: 2.5
 	}),
 	controls: ol.control.defaults().extend([
 		new ol.control.ScaleLine(),
