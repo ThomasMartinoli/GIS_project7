@@ -130,6 +130,36 @@ var Difference = new ol.layer.Image({
 });
 
 
+
+/*WFS layer*/
+
+var vectorSource = new ol.source.Vector({
+loader: function(extent, resolution, projection) {
+var url = 'http://localhost:8082/geoserver/GIS_project7/ows?service=WFS&' +
+'version=2.0.0&request=GetFeature&typeName=	GIS_project7:tiles_S2&' +
+'outputFormat=text/javascript&srsname=EPSG:3857&' +
+'format_options=callback:loadFeatures';
+$.ajax({url: url, dataType: 'jsonp'});
+}
+});
+var geojsonFormat = new ol.format.GeoJSON();
+function loadFeatures(response) {
+vectorSource.addFeatures(geojsonFormat.readFeatures(response));
+}
+var tile = new ol.layer.Vector({
+title: 'tile',
+source: vectorSource,
+style: new ol.style.Style({
+fill: new ol.style.Fill({
+color: [255,0,0,0.5],
+})
+})
+});
+
+
+
+
+
 /*Create the map homepage*/
 var map_home = new  ol.Map({
 	target: document.getElementById('map_home'),
@@ -170,6 +200,9 @@ map_home.addControl(layerSwitcher);
 
 
 
+
+
+
 /*Create the map*/
 var map = new  ol.Map({
 	target: document.getElementById('map'),
@@ -190,7 +223,7 @@ var map = new  ol.Map({
 
 	new ol.layer.Group({
 		title: 'Layer',
-		layers: [homepage_map]
+		layers: [homepage_map,tile]
 		
 	}),
 	
@@ -217,5 +250,49 @@ var map = new  ol.Map({
 	])
 });
 
+
 var layerSwitcher = new ol.control.LayerSwitcher({});
 map.addControl(layerSwitcher);
+
+
+
+
+/*Popup*/
+
+var elementPopup = document.getElementById('popup');
+var popup = new ol.Overlay({
+element: elementPopup
+});
+
+
+map.addOverlay(popup);
+
+
+
+map.on('click', function(event) {
+var feature = map.forEachFeatureAtPixel(event.pixel, function(feature, layer) {
+return feature;
+});
+if (feature != null) {
+var pixel = event.pixel;
+var coord = map.getCoordinateFromPixel(pixel);
+popup.setPosition(coord);
+
+$(elementPopup).attr('title', 'Tile', 'data-content', '<b>Id: </b>' + feature.get("tileID") +
+'</br><b>Corr: </b>' + feature.get("corr"));
+$(elementPopup).popover({'placement': 'top', 'html': true});
+$(elementPopup).popover('show');
+}
+});
+
+
+
+map.on('pointermove', function(event) {
+if (event.dragging) {
+$(elementPopup).popover('dispose');
+return;
+}
+var pixel = map.getEventPixel(event.originalEvent);
+var hit = map.hasFeatureAtPixel(pixel);
+map.getTarget().style.cursor = hit ? 'pointer' : '';
+});
