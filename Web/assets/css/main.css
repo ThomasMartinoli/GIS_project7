@@ -2305,3 +2305,9 @@ button,
    left:8px;
    bottom: 34px!important;
 }
+
+
+.popover {
+width: 200px;
+height: auto;
+}
