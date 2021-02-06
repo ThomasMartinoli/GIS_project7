@@ -1,3 +1,8 @@
+
+
+
+
+
 @import url(fontawesome-all.min.css);
 @import url("https://fonts.googleapis.com/css?family=Open+Sans:400,600,400italic,600italic|Roboto+Slab:400,700");
 /*
@@ -2274,10 +2279,11 @@ button,
 
 
 
+
 /*WebGIS styling*/
 #map{
    width: 100%;
-   height: 950px;
+   height: 800px;
    padding: 0px;
    margin: 0px;
 }
@@ -2290,7 +2296,7 @@ button,
 }
 
 .ol-mouse-position {
-   right: 42px!important;
+   right: 42px;
    color: rgb(255,255,255);
    font-size: 12px;
    text-align: center;
@@ -2303,11 +2309,5 @@ button,
 
 .ol-overviewmap {
    left:8px;
-   bottom: 34px!important;
-}
-
-
-.popover {
-width: 200px;
-height: auto;
+   bottom: 34px;
 }

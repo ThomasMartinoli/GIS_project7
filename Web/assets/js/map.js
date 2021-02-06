@@ -133,20 +133,22 @@ var Difference = new ol.layer.Image({
 
 /*WFS layer*/
 
+
 var vectorSource = new ol.source.Vector({
 loader: function(extent, resolution, projection) {
 var url = 'http://localhost:8082/geoserver/GIS_project7/ows?service=WFS&' +
-'version=2.0.0&request=GetFeature&typeName=	GIS_project7:tiles_S2&' +
+'version=2.0.0&request=GetFeature&typeName=GIS_project7:tiles_S2&' +
 'outputFormat=text/javascript&srsname=EPSG:3857&' +
 'format_options=callback:loadFeatures';
 $.ajax({url: url, dataType: 'jsonp'});
 }
 });
+
 var geojsonFormat = new ol.format.GeoJSON();
 function loadFeatures(response) {
 vectorSource.addFeatures(geojsonFormat.readFeatures(response));
 }
-var tile = new ol.layer.Vector({
+var tile= new ol.layer.Vector({
 title: 'tile',
 source: vectorSource,
 style: new ol.style.Style({
@@ -223,7 +225,7 @@ var map = new  ol.Map({
 
 	new ol.layer.Group({
 		title: 'Layer',
-		layers: [homepage_map,tile]
+		layers: [homepage_map]
 		
 	}),
 	
@@ -257,28 +259,73 @@ map.addControl(layerSwitcher);
 
 
 
-/*Popup*/
 
+var map2 = new  ol.Map({
+	target: document.getElementById('map2'),
+	layers: [	
+	new ol.layer.Group({
+		title: 'Base Maps',
+		layers: [BingBaseMap,osm,stamenWatercolor]
+	}),
+
+	new ol.layer.Group({
+		title: 'Layer',
+		layers: [homepage_map,tile]
+		
+	}),
+	
+    ],
+
+	view: new ol.View({
+		center: [12500000,12700000],
+		zoom: 3
+	}),
+	controls: ol.control.defaults().extend([
+		new ol.control.ScaleLine(),
+		new ol.control.FullScreen(), 
+		new ol.control.OverviewMap({
+			layers:[
+			new ol.layer.Tile({
+				source: new ol.source.OSM()
+			})
+		]
+		}),
+		new ol.control.MousePosition({
+			coordinateFormat:ol.coordinate.createStringXY(4),
+			projection: 'EPSG:4326'
+		})
+	])
+});
+
+
+var layerSwitcher = new ol.control.LayerSwitcher({});
+map2.addControl(layerSwitcher);
+
+
+
+
+/*Popup*/
 var elementPopup = document.getElementById('popup');
 var popup = new ol.Overlay({
 element: elementPopup
 });
 
 
-map.addOverlay(popup);
+map2.addOverlay(popup);
 
 
 
-map.on('click', function(event) {
-var feature = map.forEachFeatureAtPixel(event.pixel, function(feature, layer) {
+map2.on('click', function(event) {
+var feature = map2.forEachFeatureAtPixel(event.pixel, function(feature, layer) {
 return feature;
 });
 if (feature != null) {
 var pixel = event.pixel;
-var coord = map.getCoordinateFromPixel(pixel);
+var coord = map2.getCoordinateFromPixel(pixel);
 popup.setPosition(coord);
 
-$(elementPopup).attr('title', 'Tile', 'data-content', '<b>Id: </b>' + feature.get("tileID") +
+$(elementPopup).attr('title', 'Tile');
+$(elementPopup).attr('data-content', '<b>Id: </b>' + feature.get("tileID") +
 '</br><b>Corr: </b>' + feature.get("corr"));
 $(elementPopup).popover({'placement': 'top', 'html': true});
 $(elementPopup).popover('show');
@@ -287,12 +334,12 @@ $(elementPopup).popover('show');
 
 
 
-map.on('pointermove', function(event) {
+map2.on('pointermove', function(event) {
 if (event.dragging) {
 $(elementPopup).popover('dispose');
 return;
 }
-var pixel = map.getEventPixel(event.originalEvent);
-var hit = map.hasFeatureAtPixel(pixel);
-map.getTarget().style.cursor = hit ? 'pointer' : '';
+var pixel = map2.getEventPixel(event.originalEvent);
+var hit = map2.hasFeatureAtPixel(pixel);
+map2.getTarget().style.cursor = hit ? 'pointer' : '';
 });
