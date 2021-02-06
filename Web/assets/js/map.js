@@ -72,7 +72,7 @@ var homepage_map = new ol.layer.Image({
 	visible: true,
 	source:new ol.source.ImageWMS({
 		url:'http://localhost:8082/geoserver/GIS_project7/wms',
-		params: {'LAYERS':'GIS_project7:homepage'},
+		params: {'LAYERS':'GIS_project7:HomePage_map'},
 		ratio: 1,
 		serverType: 'geoserver',
 	}),
