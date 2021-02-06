@@ -78,40 +78,79 @@
 							<!-- Section -->
 								<section>
 									<header class="major">
-										<h2>Erat lacinia</h2>
+										<h2>Overview</h2>
 									</header>
-									<div class="features">
+									<div class="main">
 										<article>
 											<span class="icon fa-gem"></span>
-											<div class="content">
-												<h3>Portitor ullamcorper</h3>
-												<p>Aenean ornare velit lacus, ac varius enim lorem ullamcorper dolore. Proin aliquam facilisis ante interdum. Sed nulla amet lorem feugiat tempus aliquam.</p>
-											</div>
+												<h3>Introduction</h3>
+												<p>The world population maps are important information that should be acquired for many uses at the
+													same time these maps should be accurate and precise due to their uses in multiple sectors. They should
+													provide data about the human presence on each part of the Earth as this could be used for the studies
+													made on the operating policies and also for determining the critical level of the effect of disasters on
+													specific areas of the world.
+													<br>
+													Therefore, the reliability and accuracy of world population maps is essential. In order to know this
+													information an accuracy assessment has to be made to define the limitations of the datasets.
+													<br>
+													The main purpose of this website is to show the results of a study made on two separate datasets of the
+													world’s population. The first provided by the Global Human Settlement and the second by the WorldPop
+													Organization. The aim of the study is to compare the correlation between the two maps, then a
+													validation process was done to test the accuracy of these results with the reality by manually classifying
+													some samples taken on the same area.
+													<br>
+													Due to the large data and area of the world the study was concentrated on the region of Siberia
+													identified by area 7.
+												</p>
 										</article>
 										<article>
 											<span class="icon solid fa-paper-plane"></span>
-											<div class="content">
-												<h3>Sapien veroeros</h3>
-												<p>Aenean ornare velit lacus, ac varius enim lorem ullamcorper dolore. Proin aliquam facilisis ante interdum. Sed nulla amet lorem feugiat tempus aliquam.</p>
-											</div>
-										</article>
-										<article>
-											<span class="icon solid fa-rocket"></span>
-											<div class="content">
-												<h3>Quam lorem ipsum</h3>
-												<p>Aenean ornare velit lacus, ac varius enim lorem ullamcorper dolore. Proin aliquam facilisis ante interdum. Sed nulla amet lorem feugiat tempus aliquam.</p>
-											</div>
-										</article>
-										<article>
-											<span class="icon solid fa-signal"></span>
-											<div class="content">
-												<h3>Sed magna finibus</h3>
-												<p>Aenean ornare velit lacus, ac varius enim lorem ullamcorper dolore. Proin aliquam facilisis ante interdum. Sed nulla amet lorem feugiat tempus aliquam.</p>
-											</div>
+												<h3>Data Acquisition</h3>
+												<p>
+													The studied datasets were provided by the Global Human Settlement Layer from the European
+													Commission <a href="https://ghsl.jrc.ec.europa.eu/" target="_blank">(Global Human Settlement - GHSL Homepage - European Commission (europa.eu))</a>, and
+													from the WorldPop Organization <a href="https://www.worldpop.org/" target="_blank">(WorldPop)</a>. Both datasets were provided as spatial raster maps that
+													portrays the distribution and density of the population on Earth, so the data are provided as the number
+													of people living in each cell of the raster map.
+													<br>
+													The two sources provide the maps for different years, however the study was made on maps for the
+													year of 2015. The GHSL supplies the maps in multiple resolutions and coordinate reference systems, the
+													properties are the same as the ones provided by the WorldPop, WGS84 as the coordinate reference
+													system and 30 arcsec as the resolution of the maps.
+												</p>
 										</article>
 									</div>
 								</section>
-
+								<section>
+									<header class="major">
+										<h2>Assessment Methods</h2>
+									</header>
+									<div class="main">
+										<article>
+											<span class="icon fa-gem"></span>
+												<h3>Intercomparison</h3>
+												<p>
+													The first assessment method is to compare the two maps with each other, theoretically they should
+													both have the same data such as population density and distribution since they have the same
+													properties such as the year of the data and resolution. The intercomparison step is done to compare
+													these maps and as they are more similar and their cell values are equal the more, they represent the
+													reality and therefore reliable and accurate. Hence the best method to compare them is to calculate the
+													difference between them, in addition to determining the correlation between their cell values.
+												</p>
+										</article>
+										<article>
+											<span class="icon solid fa-paper-plane"></span>
+												<h3>Validation</h3>
+												<p>
+													The validation step is another methodology for the assessment of the maps’ accuracy that rely on the
+													comparison of the maps with a reference data collected by a field survey or high-resolution satellite
+													imagery photo interpretations. However, this study was limited to 600 sampling points randomly
+													distributed in the studied area that are classified manually and used as a reference for the assessment ofthe correctness of the datasets. Moreover, using the reference points, the error matrix of the maps was calculated in addition to accuracy indexes such as the overall accuracy, user’s accuracy, and the
+													producer’s accuracy.
+												</p>
+										</article>
+									</div>
+								</section>
 							<!-- Section -->
 								
 
@@ -179,7 +218,7 @@
 							
 						 <!-- Footer -->
 								<footer id="footer">
-									<p class="copyright">&copy; Untitled. Design: <a href="https://html5up.net">HTML5 UP</a>.</p>
+									<p class="copyright">&copy; Politecnico di Milano.</p>
 								</footer>
 
 						</div>
