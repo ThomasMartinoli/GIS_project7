@@ -269,7 +269,7 @@ map.addControl(layerSwitcher);
 
 
 
-
+// Correlation map
 
 var map2 = new  ol.Map({
 	target: document.getElementById('map2'),
@@ -312,7 +312,7 @@ var map2 = new  ol.Map({
 var layerSwitcher = new ol.control.LayerSwitcher({});
 map2.addControl(layerSwitcher);
 
-
+// Validation Map
 var map_vali = new  ol.Map({
 	target: document.getElementById('map_vali'),
 	layers: [	
@@ -330,7 +330,7 @@ var map_vali = new  ol.Map({
 		title: 'Validation',
 		layers: [Sampling]
 		
-	}),	
+	}),
     ],
 
 	view: new ol.View({
@@ -356,6 +356,48 @@ var map_vali = new  ol.Map({
 
 var layerSwitcher = new ol.control.LayerSwitcher({});
 map_vali.addControl(layerSwitcher);
+
+
+//Generic Map
+
+var map_generic = new  ol.Map({
+	target: document.getElementById('map_generic'),
+	layers: [
+	new ol.layer.Group({
+		title: 'Base Maps',
+		layers: [osm,stamenToner,stamenWatercolor]
+	}),
+	new ol.layer.Group({
+		title: 'Overlay Layer',
+		layers: [homepage_map,tile]
+	}),
+	],
+	view: new ol.View({
+		center: [1100000,5000000],
+		zoom: 1
+	}),
+	controls: ol.control.defaults().extend([
+		new ol.control.ScaleLine(),
+		new ol.control.FullScreen(), 
+		new ol.control.OverviewMap({
+			layers:[
+			new ol.layer.Tile({
+				source: new ol.source.OSM()
+			})
+		]
+		}),
+		new ol.control.MousePosition({
+			coordinateFormat:ol.coordinate.createStringXY(4),
+			projection: 'EPSG:4326'
+		})
+	])
+});
+
+var layerSwitcher = new ol.control.LayerSwitcher({});
+map_home.addControl(layerSwitcher);
+
+
+
 
 /*Popup*/
 var elementPopup = document.getElementById('popup');
