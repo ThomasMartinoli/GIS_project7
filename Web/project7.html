@@ -6,7 +6,8 @@
 -->
 <html>
 	<head>
-		<title>Home</title>
+
+		<title>Sub-Area 7</title>
 		<meta charset="utf-8" />
 		
 		<!--OpenLayers-->
@@ -27,9 +28,6 @@
 		<!--Main CSS-->
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
-		
-
-
 
 	</head>
 	<body class="is-preload">
@@ -44,7 +42,7 @@
 							<!-- Header -->
 								<header id="header">
 
-									<a href="index.html" class="logo"><strong>Homepage</strong></a>
+									<a href="index.html" class="logo"><strong>Home</strong></a>
 
 								</header>
 
@@ -59,7 +57,7 @@
 								<div text-align="left" id="map"></div>
 									
 							
-								</section> 
+							</section> 
 
 							<!-- Section -->
 								<section>
@@ -68,18 +66,19 @@
 									</header>
 									<div class="features">
 										<article>
-											<span class="icon fa-gem"></span>
+										<!--	<span class="icon fa-gem"></span>	-->
+
 											<div class="content">
 												<li><a href="correlation.html">Correlation map</a></li>
 												<p>Here it is possible to see the correlation with respect to the global area, and also for each tile.
-												The understand better what correlation is <a href="https://en.wikipedia.org/wiki/Covariance_matrix">clik here</a>.  </p>
+												The understand better what correlation is <a href="https://en.wikipedia.org/wiki/Covariance_matrix">click here</a>.  </p>
 											</div>
 										</article>
 										<article>
-											<span class="icon solid fa-signal"></span>
+										<!--	<span class="icon solid fa-signal"></span>	-->
 											<div class="content">
 												<li><a href="validation.html">Validation map</a></li>
-												<p>Aenean ornare velit lacus, ac varius enim lorem ullamcorper dolore. Proin aliquam facilisis ante interdum. Sed nulla amet lorem feugiat tempus aliquam.</p>
+												<p>The validation map shows the manual classification of sampling points on the maps as urban or not urban in order to compare with the results obtained from the intercomparison.</p>
 											</div>
 
 										</article>
@@ -88,7 +87,97 @@
 								</section>
 
 							<!-- Section -->
-								
+								<section>
+									<header class="major">
+										<h2>Process steps</h2>
+									</header>
+
+										<article>
+
+											<div class="content">
+												<li>Raster Data Preprocessing</li>
+												<p>
+													Raster align 
+													<br>
+													Raster clip by mask
+													<br>
+													convert to int16
+													<br>
+													null values
+												</p>
+											</div>
+
+										</article>
+										<article>
+
+											<div class="content">
+												<li>Raster Data Processing (Intercomparison)</li>
+												<p>
+													map of differences
+													<br>
+													statistics
+													<br>
+													correlation
+												</p>
+											</div>
+
+										</article>
+										<article>
+
+											<div class="content">
+												<li>Preprocessing Data for validation</li>
+												<p>
+													reclassify
+													<br>
+													convert to int16
+													<br>
+													map of differences
+													<br>
+													convert to int16
+												</p>
+											</div>
+
+										</article>
+										<article>
+
+											<div class="content">
+												<li>Validation</li>
+												<p>
+													AcATaMa
+													<br>
+													create sampling points
+													<br>
+													classify the points
+													<br>
+													accuracy results
+													<br>
+													error matrix												
+												</p>
+											</div>
+
+										</article>
+										<article>
+
+											<div class="content">
+												<li>WebGIS</li>
+												<p>
+													Geoserver												
+												</p>
+											</div>
+
+										</article>
+										<article>
+
+											<div class="content">
+												<li>website</li>
+												<p>
+													results illustrated in the website												
+												</p>
+											</div>
+
+										</article>
+
+								</section>
 
 						</div>
 					</div>
@@ -110,7 +199,7 @@
 										<h2>Menu</h2>
 									</header>
 									<ul>
-										<li><a href="index.html">Homepage</a></li>
+										<li><a href="index.html">Home</a></li>
 										<li><a href="generic.html">Generic</a></li>
 										<li>
 											<span class="opener">Earth</span>

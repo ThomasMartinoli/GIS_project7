@@ -1,4 +1,4 @@
-<!DOCTYPE HTML>
+<doctype! html>
 <!--
 	Editorial by HTML5 UP
 	html5up.net | @ajlkn
@@ -6,10 +6,29 @@
 -->
 <html>
 	<head>
-		<title>Generic - Editorial by HTML5 UP</title>
+		<title>Generic</title>
 		<meta charset="utf-8" />
+		
+		<!--OpenLayers-->
+		<link rel="stylesheet" href="v6.5.0/css/ol.css">
+		<script src="v6.5.0/build/ol.js" ></script>
+		<!--Layer switcher-->
+		<script src="http://rawgit.com/walkermatt/ol-layerswitcher/master/dist/ol-layerswitcher.js"></script>
+		<link rel="stylesheet" href="http://rawgit.com/walkermatt/ol-layerswitcher/master/src/ol-layerswitcher.css">
+		<!--jQuery-->
+		<script src="https://code.jquery.com/jquery-3.4.1.min.js"integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="crossorigin="anonymous"></script>
+		<!--Popup-->
+
+		<script src="v6.5.0/apidoc/scripts/bootstrap.bundle.min.js"></script>		
+		<link rel="stylesheet" href="v6.5.0/apidoc/styles/bootstrap.min.css" type="text/css"/>
+
+		<!--Main CSS-->
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
+		
+
+
+
 	</head>
 	<body class="is-preload">
 
@@ -22,38 +41,33 @@
 
 							<!-- Header -->
 								<header id="header">
+
 									<a href="index.html" class="logo"><strong>Home</strong></a>
+
 								</header>
+
+							<!-- Banner -->
+							<section>
+								<header >
+								<h1>Generic</h1>
+								</header>									
+									
+							
+								<div text-align="left" id="map_generic"></div>
+									
+							
+							</section> 
 
 							<!-- Content -->
 								<section>
-									<header class="main">
-										<h1>Generic</h1>
-									</header>
 
-									<span class="image main"><img src="images/pic11.jpg" alt="" /></span>
 
-									<p>Donec eget ex magna. Interdum et malesuada fames ac ante ipsum primis in faucibus. Pellentesque venenatis dolor imperdiet dolor mattis sagittis. Praesent rutrum sem diam, vitae egestas enim auctor sit amet. Pellentesque leo mauris, consectetur id ipsum sit amet, fergiat. Pellentesque in mi eu massa lacinia malesuada et a elit. Donec urna ex, lacinia in purus ac, pretium pulvinar mauris. Curabitur sapien risus, commodo eget turpis at, elementum convallis elit. Pellentesque enim turpis, hendrerit.</p>
-									<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis dapibus rutrum facilisis. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Etiam tristique libero eu nibh porttitor fermentum. Nullam venenatis erat id vehicula viverra. Nunc ultrices eros ut ultricies condimentum. Mauris risus lacus, blandit sit amet venenatis non, bibendum vitae dolor. Nunc lorem mauris, fringilla in aliquam at, euismod in lectus. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. In non lorem sit amet elit placerat maximus. Pellentesque aliquam maximus risus, vel sed vehicula.</p>
-									<p>Interdum et malesuada fames ac ante ipsum primis in faucibus. Pellentesque venenatis dolor imperdiet dolor mattis sagittis. Praesent rutrum sem diam, vitae egestas enim auctor sit amet. Pellentesque leo mauris, consectetur id ipsum sit amet, fersapien risus, commodo eget turpis at, elementum convallis elit. Pellentesque enim turpis, hendrerit tristique lorem ipsum dolor.</p>
+								<!--	<span class="image main"><img src="images/pic11.jpg" alt="" /></span>	-->
 
-									<hr class="major" />
+								<!--	<hr class="major" />	-->
 
-									<h2>Interdum sed dapibus</h2>
-									<p>Donec eget ex magna. Interdum et malesuada fames ac ante ipsum primis in faucibus. Pellentesque venenatis dolor imperdiet dolor mattis sagittis. Praesent rutrum sem diam, vitae egestas enim auctor sit amet. Pellentesque leo mauris, consectetur id ipsum sit amet, fergiat. Pellentesque in mi eu massa lacinia malesuada et a elit. Donec urna ex, lacinia in purus ac, pretium pulvinar mauris. Curabitur sapien risus, commodo eget turpis at, elementum convallis elit. Pellentesque enim turpis, hendrerit.</p>
-									<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis dapibus rutrum facilisis. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Etiam tristique libero eu nibh porttitor fermentum. Nullam venenatis erat id vehicula viverra. Nunc ultrices eros ut ultricies condimentum. Mauris risus lacus, blandit sit amet venenatis non, bibendum vitae dolor. Nunc lorem mauris, fringilla in aliquam at, euismod in lectus. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. In non lorem sit amet elit placerat maximus. Pellentesque aliquam maximus risus, vel sed vehicula. Interdum et malesuada fames ac ante ipsum primis in faucibus. Pellentesque venenatis dolor imperdiet dolor mattis sagittis. Praesent rutrum sem diam, vitae egestas enim auctor sit amet. Pellentesque leo mauris, consectetur id ipsum sit amet, fersapien risus, commodo eget turpis at, elementum convallis elit. Pellentesque enim turpis, hendrerit tristique lorem ipsum dolor.</p>
-
-									<hr class="major" />
-
-									<h2>Magna etiam veroeros</h2>
-									<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis dapibus rutrum facilisis. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Etiam tristique libero eu nibh porttitor fermentum. Nullam venenatis erat id vehicula viverra. Nunc ultrices eros ut ultricies condimentum. Mauris risus lacus, blandit sit amet venenatis non, bibendum vitae dolor. Nunc lorem mauris, fringilla in aliquam at, euismod in lectus. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. In non lorem sit amet elit placerat maximus. Pellentesque aliquam maximus risus, vel sed vehicula.</p>
-									<p>Interdum et malesuada fames ac ante ipsum primis in faucibus. Pellentesque venenatis dolor imperdiet dolor mattis sagittis. Praesent rutrum sem diam, vitae egestas enim auctor sit amet. Pellentesque leo mauris, consectetur id ipsum sit amet, fersapien risus, commodo eget turpis at, elementum convallis elit. Pellentesque enim turpis, hendrerit tristique lorem ipsum dolor.</p>
-
-									<hr class="major" />
-
-									<h2>Lorem aliquam bibendum</h2>
-									<p>Donec eget ex magna. Interdum et malesuada fames ac ante ipsum primis in faucibus. Pellentesque venenatis dolor imperdiet dolor mattis sagittis. Praesent rutrum sem diam, vitae egestas enim auctor sit amet. Pellentesque leo mauris, consectetur id ipsum sit amet, fergiat. Pellentesque in mi eu massa lacinia malesuada et a elit. Donec urna ex, lacinia in purus ac, pretium pulvinar mauris. Curabitur sapien risus, commodo eget turpis at, elementum convallis elit. Pellentesque enim turpis, hendrerit.</p>
-									<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis dapibus rutrum facilisis. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Etiam tristique libero eu nibh porttitor fermentum. Nullam venenatis erat id vehicula viverra. Nunc ultrices eros ut ultricies condimentum. Mauris risus lacus, blandit sit amet venenatis non, bibendum vitae dolor. Nunc lorem mauris, fringilla in aliquam at, euismod in lectus. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. In non lorem sit amet elit placerat maximus. Pellentesque aliquam maximus risus, vel sed vehicula.</p>
+									<h2>About us</h2>
+									<p>This project of comparing and validating the two world population maps was done on the region of Siberia as highlighted by the tiles in the map. The main project included the whole world, the rest parts of the world were splitted and distributed on other teams working for the same purpose. The region of our work was defined by Sub-Area 7, it is possible to view the results of our study by going to Sub-Area 7 in the Earth tab in the sidebar. The study was performed by Zhijun Hu, Thomas Martinoli and Sami Miaari.</p>
 
 								</section>
 
@@ -77,7 +91,7 @@
 										<h2>Menu</h2>
 									</header>
 									<ul>
-										<li><a href="index.html">Homepage</a></li>
+										<li><a href="index.html">Home</a></li>
 										<li><a href="generic.html">Generic</a></li>
 										<li>
 											<span class="opener">Earth</span>
@@ -96,7 +110,7 @@
 												<li><a href="underconstraction.html">Sub-Area 12</a></li>												
 											</ul>
 										</li>
-										<li><a href="#">Technology</a></li>
+										<li><a href="technology.html">Technology</a></li>
 										<li>
 											<span class="opener">Contacts</span>
 											<ul>
@@ -104,7 +118,7 @@
 									
 												<ul class="contact">
 										<li class="icon solid fa-envelope"><a href="mailto:sami.miaari@mail.polimi.it">sami.miaari@mail.polimi.it</a></li>
-										<li class="icon solid fa-envelope"><a href="mailto:sami.miaari@mail.polimi.it">thomas.martinoli@mail.polimi.it</a></li>
+										<li class="icon solid fa-envelope"><a href="mailto:thomas.martinoli@mail.polimi.it">thomas.martinoli@mail.polimi.it</a></li>
 										<li class="icon solid fa-envelope"><a href="mailto:zhijun.hu@mail.polimi.it">zhijun.hu@mail.polimi.it</a></li>
 									</ul>
 								</li>
@@ -137,6 +151,7 @@
 			<script src="assets/js/breakpoints.min.js"></script>
 			<script src="assets/js/util.js"></script>
 			<script src="assets/js/main.js"></script>
+			<script src="assets/js/map.js"></script>
 
 	</body>
 </html>
