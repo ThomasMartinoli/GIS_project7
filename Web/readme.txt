@@ -20,3 +20,6 @@ You should add following files in GeoServer
                 'Reclassified_GHS-Pop_S3'
                 'Reclassified_WorldPop_S3'
                 'Difference_S3'
+                
+                 'tiles_S2' (as WFS)
+                 'Sampling_clissified' (as WFS)
