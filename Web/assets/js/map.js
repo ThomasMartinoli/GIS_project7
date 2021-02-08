@@ -129,33 +129,6 @@ var Difference = new ol.layer.Image({
 	opacity: 0.7,
 });
 
-/*
-var Sampling = new ol.layer.Image({
-	title:'	Sample points',
-	visible: true,
-	source:new ol.source.ImageWMS({
-		url:'http://localhost:8082/geoserver/GIS_project7/wms',
-		params: {'LAYERS':'GIS_project7:sampling_classified'},
-		ratio: 1,
-		serverType: 'geoserver',
-	}),
-	opacity: 0.7,
-});
-*/
-
-/*
-var tile2 = new ol.layer.Image({
-	title:'	Tiles',
-	visible: true,
-	source:new ol.source.ImageWMS({
-		url:'http://localhost:8082/geoserver/GIS_project7/wms',
-		params: {'LAYERS':'GIS_project7:tiles_S2'},
-		ratio: 1,
-		serverType: 'geoserver',
-	}),
-	opacity: 0.7,
-});
-
 
 /*WFS layer*/
 
@@ -255,9 +228,8 @@ var map = new  ol.Map({
     ],
 
 	view: new ol.View({
-		center: [12500000,11900000],
-		zoom: 3.2
-	}),
+		center: [12550000,11900000],
+		zoom: 3	}),
 	controls: ol.control.defaults().extend([
 		new ol.control.ScaleLine(),
 		new ol.control.FullScreen(), 
