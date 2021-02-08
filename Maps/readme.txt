@@ -6,3 +6,4 @@ This folder contains the maps that are genereted by the different step:
 -reclassified GHS_POP
 -reclassified WorldPop
 -Map of differences:  (GHS_POP_rec-WorldPop_rec)+1
+-Global Map for the homepage
