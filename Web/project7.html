@@ -139,13 +139,30 @@
 											<div class="content">
 												<li>Raster Data Preprocessing</li>
 												<p>
-													Raster align 
+													Before the comparison of the maps, they should go under some processing to be prepared for the
+													comparison. The first step was to clips the maps to the studied area using the command clip by mask
+													where the mask used for the clip was the vector layer of the tiles representing the studied area. After
+													applying this command to both the World Pop and GHS Pop maps then the two raster maps the align
+													raster command was used to resample the World Pop map on the same grid of the GHS Pop, the two
+													maps should have the same resolution and coordinate reference system, however the resampling step
+													was made to ensure avoiding small differences as the comparison will be carried out in a pixel-by-pixel
+													basis.
 													<br>
-													Raster clip by mask
+													In order to avoid map computations errors due to float values so the maps were converted to integer
+													raster maps using the tool of raster conversion in the GDAL.
 													<br>
-													convert to int16
+													The null value (-32768) spots on the World Pop map is set for areas that are not populated such as
+													oceans or inland water bodies, while the same geographical areas excluding the inland water bodies for
+													the GHS Pop are defined by another null value (-200) and for the inland water bodies the value of zero. In
+													order to have equivalent representation of the data from both maps so some processing was carried out
+													on the World Pop raster map. first, using the raster calculator, all null values were set to zero. Later to
+													have equivalency with the GHS Pop map so the null values of World Pop were modified to become -200,
+													same as the GHS Pop, also using the raster calculator. With the aim of ensuring that the raster metadata
+													are correctly updated so the process was repeated using the tool r.null from GRASS by setting the null
+													values for both maps as -200.
 													<br>
-													null values
+													By this step so the result is two world population raster maps with the same resolution and coordinate
+													reference system, having integer values, and same value of -200 representing no data pixels.
 												</p>
 											</div>
 
@@ -155,11 +172,26 @@
 											<div class="content">
 												<li>Raster Data Processing (Intercomparison)</li>
 												<p>
-													map of differences
+													the achievement of the purpose of this study is done by comparing the two maps, so after the
+													preprocessing and preparation of the maps, then the next step is to compare them. The comparison was
+													done by calculating the map of differences between both maps also using the raster calculator. Using
+													the map of differences then the basic statistics could be calculated such as min, max, range, mean and
+													standard deviation. These statistics were calculated using the tool r.univar.
 													<br>
-													statistics
+													The correlation between the two maps is an important parameter to be for comparison, in order to
+													calculate this parameter the tool r.covar was used. However the correlation between the tiles was
+													calculated by clipping each tile individually.
 													<br>
-													correlation
+													During this process, a problem was faced when calculating the correlation values of each tile, where
+													each team member had different values of correlation. The problem was solved when it was found that
+													applying the align raster in an opposite way such that World Pop is the reference map and GHS Pop is
+													the map to be resampled, so different results were obtained than the order applied in this study. This
+													problem is not reasonable to occur since both maps should be having the same resolution, however this
+													analysis supports the fact that there exists small differences.
+													<br>
+													Due to some tiles with values null as the region of Siberia is mainly not inhabited, so many in many tiles
+													the correlation value was given as NaN, as a result we had to insert the value of 1 for the correlation in
+													these areas as they both have the same value, not populated.
 												</p>
 											</div>
 
@@ -169,13 +201,14 @@
 											<div class="content">
 												<li>Preprocessing Data for validation</li>
 												<p>
-													reclassify
-													<br>
-													convert to int16
-													<br>
-													map of differences
-													<br>
-													convert to int16
+													The validation step required using thematic maps, so the two raster maps of World Pop and GHS Pop
+													were reclassified to have only two values either representing an urban pixel, or not urban. The
+													reclassification was done using the raster calculator. The result of raster calculator is always a float so
+													the maps had to be converted to integers. Due to a bug in the plugin that is used for the classification,
+													the difference map had to be calculated, also using the raster calculator, so later also converted to
+													integer. After calculating the difference map the value 1 was added just not to have negative values, the
+													result is a map that has only 3 values, if the previous reclassification was done correctly each
+													corresponding to a specific case of outputs comparison between the two main maps.
 												</p>
 											</div>
 
@@ -185,15 +218,33 @@
 											<div class="content">
 												<li>Validation</li>
 												<p>
-													AcATaMa
+													The validation was done using the plugin AcATaMa in QGIS, as mentioned before the difference map
+													was used, only due to a bug in this plugin, for stratifying random sampling points on the studied area. A
+													problem that was faced during this step is that the points were obtained sometimes outside the studied
+													area, because at first the clip by mask operation was not performed but just clipped the raster maps
+													using the feature included in the align raster command, however by using the one in the align raster it
+													clips the bounding box, not the exact dimensions of the layer. To overcome this problem the raster
+													maps were clipped by mask according to the studied area from the first step before the aligning step.
 													<br>
-													create sampling points
+													The random sampling points were chosen to be 600 points, around 200 points for each case scenario
+													(GHS Pop is urban but World Pop is not urban, ... etc.).
 													<br>
-													classify the points
+													Another problem faced during the sampling was with the minimum distance between sampling points,
+													which was recommended to be 0.08 degrees representing 10 pixels minimum distance between
+													sampling points, however the plugin didn’t work with this requirement so we had to set 0 as the
+													minimum distance.
 													<br>
-													accuracy results
+													The validation was done based on the GHS Pop map as the thematic map. For the manual classification
+													the Google, Bing and ESRI satellite imagery maps were used. During classification, the window size was
+													adjusted to 0.004 degrees which is the same as the pixel size of the raster maps being validated, since
+													the classification in the raster maps is on a pixel level. If only one building exits in the sampling point so
+													it was classified as urban, for the reason that in the raster maps we set any value of population different
+													from zero so its urban.
 													<br>
-													error matrix												
+													As a result, the plugin is able to provide the error matrix for the thematic map selected, GHS Pop in our
+													case. This is also a limitation as we want to evaluate the error matrix for both maps, so a python script
+													was used to evaluate the error matrix in addition to the accuracy indexes for the other map using the
+													same classified sampling points.											
 												</p>
 											</div>
 
@@ -203,7 +254,22 @@
 											<div class="content">
 												<li>WebGIS</li>
 												<p>
-													Geoserver												
+													After Intercomparison and Validation phase we use GeoServer to collect the maps obtained.
+													Firstly, in GeoServer each of us create a specific WorkSpace: GIS_project7, on which maps are stored.
+													Each time that a file is stored is necessary to distinguish beetwen the different format 
+													(in our case we have the following format .shp, .gpkg, and .GeoTIFF) and put the correct boundary.
+													Furthermore different styles are imported from Qgis (format file .sld) in this way is possible to customize the maps, and
+													put in evidence their features thanks to colors and shades, so to obtain a better visualization and rappresentation.
+													<br>
+													GeoServer has a relavant part during the realization of the webpage, because OpenLayers is used to generate interactive maps,
+													and to add WMS layers and/or WFS layers we exploit GeoServer calling the appropriate URL to invoque the right layer, for example: 
+													<br>
+													http://localhost:8082/geoserver/wms
+													<br>
+													http://localhost:8082/geoserver/WORKSPACE_NAME/ows?service=WFS
+													<br>
+													WMS allows to visualize the raster and vector as image, instead WFS gives also the possibility to obtain
+													information, so it is used to adding a popup in same case.		
 												</p>
 											</div>
 
@@ -211,9 +277,19 @@
 										<article>
 
 											<div class="content">
-												<li>website</li>
+												<li>Website</li>
 												<p>
-													results illustrated in the website												
+													The creation of the webpage is the final phase, on which we put toghert out work.
+													We start from a predifinate template: Editorial (https://html5up.net/)
+													<br>
+													The idea is not to create a website that could cointain only our work, but also the work of the other groups, 
+													in this way it is possible to have a site that cover the entire Globe, and this is why in the princiapl menu is possiple
+													to select the desired area. Obviosly we developed only our.
+													<br>
+													Unfortunately we have some problems with the template: the code for the WFS layers works correctly, but if we try to insert 
+													it in the pages we obtain a error (.popover is not a function), so to solve the problem we decide to creare appropriate pages
+													on which visualaze maps and layers, but also introducing the obtained result, as the covariance, and the Error matrix for the 
+													validation phase. 											
 												</p>
 											</div>
 
