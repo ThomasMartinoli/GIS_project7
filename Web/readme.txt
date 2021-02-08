@@ -2,7 +2,8 @@ This folder contains the web code
 Basic info:
 1.BaseMap: Bing Map (Aerial)
                    OpenStreetMap
-                   Stamen Watercolor
+                   Stamen watercolor
+                   Stamen toner
 2.OpenLayers Version: v6.5.0
 3.Geoserver Version:v2.15.1
 
