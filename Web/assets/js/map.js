@@ -129,12 +129,27 @@ var Difference = new ol.layer.Image({
 	opacity: 0.7,
 });
 
+/*
 var Sampling = new ol.layer.Image({
 	title:'	Sample points',
 	visible: true,
 	source:new ol.source.ImageWMS({
 		url:'http://localhost:8082/geoserver/GIS_project7/wms',
 		params: {'LAYERS':'GIS_project7:sampling_classified'},
+		ratio: 1,
+		serverType: 'geoserver',
+	}),
+	opacity: 0.7,
+});
+*/
+
+/*
+var tile2 = new ol.layer.Image({
+	title:'	Tiles',
+	visible: true,
+	source:new ol.source.ImageWMS({
+		url:'http://localhost:8082/geoserver/GIS_project7/wms',
+		params: {'LAYERS':'GIS_project7:tiles_S2'},
 		ratio: 1,
 		serverType: 'geoserver',
 	}),
@@ -168,9 +183,6 @@ color: [255,0,0,0.5],
 })
 })
 });
-
-
-
 
 
 /*Create the map homepage*/
@@ -312,50 +324,6 @@ var map2 = new  ol.Map({
 var layerSwitcher = new ol.control.LayerSwitcher({});
 map2.addControl(layerSwitcher);
 
-// Validation Map
-var map_vali = new  ol.Map({
-	target: document.getElementById('map_vali'),
-	layers: [	
-	new ol.layer.Group({
-		title: 'Base Maps',
-		layers: [BingBaseMap,osm,stamenWatercolor]
-	}),
-
-	new ol.layer.Group({
-		title: 'Layer',
-		layers: [homepage_map,tile]
-		
-	}),
-	new ol.layer.Group({
-		title: 'Validation',
-		layers: [Sampling]
-		
-	}),
-    ],
-
-	view: new ol.View({
-		center: [12500000,12700000],
-		zoom: 3
-	}),
-	controls: ol.control.defaults().extend([
-		new ol.control.ScaleLine(),
-		new ol.control.FullScreen(), 
-		new ol.control.OverviewMap({
-			layers:[
-			new ol.layer.Tile({
-				source: new ol.source.OSM()
-			})
-		]
-		}),
-		new ol.control.MousePosition({
-			coordinateFormat:ol.coordinate.createStringXY(4),
-			projection: 'EPSG:4326'
-		})
-	])
-});
-
-var layerSwitcher = new ol.control.LayerSwitcher({});
-map_vali.addControl(layerSwitcher);
 
 
 //Generic Map
