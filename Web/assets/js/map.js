@@ -334,7 +334,7 @@ var map_generic = new  ol.Map({
 });
 
 var layerSwitcher = new ol.control.LayerSwitcher({});
-map_home.addControl(layerSwitcher);
+map_generic.addControl(layerSwitcher);
 
 
 
